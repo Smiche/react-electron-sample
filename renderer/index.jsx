@@ -3,8 +3,9 @@ import * as ReactDOM from "react-dom";
 //Load react library
 import * as React from "react";
 
-//Render Hello World in div with react
+import {RootComponent} from "./rootComponent";
+
 ReactDOM.render(
-    <h1>Hello, world!</h1>,
+   <RootComponent />,
     document.getElementById('root')
 );
