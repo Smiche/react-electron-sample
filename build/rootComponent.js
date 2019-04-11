@@ -31,18 +31,25 @@ var RootComponent = exports.RootComponent = function (_React$Component) {
   function RootComponent(props) {
     _classCallCheck(this, RootComponent);
 
+    //This component has state. The default state is defined:
     var _this = _possibleConstructorReturn(this, (RootComponent.__proto__ || Object.getPrototypeOf(RootComponent)).call(this, props));
 
     _this.state = {
+      //String of the contents of the file loaded
       contentLoaded: '',
+      //Object holding the changed data
       contentChanged: '',
+      //Path of the opened file
       filePath: ''
     };
 
+    //binding the functions to the same "this" context
     _this.onFileContentLoaded = _this.onFileContentLoaded.bind(_this);
     _this.onJsonChange = _this.onJsonChange.bind(_this);
     return _this;
   }
+  //Called by LoadFileComponent when a file is loaded, the state will be updated with the data it receives.
+
 
   _createClass(RootComponent, [{
     key: 'onFileContentLoaded',
@@ -52,6 +59,8 @@ var RootComponent = exports.RootComponent = function (_React$Component) {
         filePath: path
       });
     }
+    //Called whenever the json is changed in the editor, state object representing it will change too.
+
   }, {
     key: 'onJsonChange',
     value: function onJsonChange(key, value, parent, data) {
@@ -59,6 +68,8 @@ var RootComponent = exports.RootComponent = function (_React$Component) {
         contentChanged: data
       });
     }
+    //Renders the RootComponent
+
   }, {
     key: 'render',
     value: function render() {
